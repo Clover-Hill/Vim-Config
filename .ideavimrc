@@ -52,11 +52,12 @@ set NERDTree
 set surround
 set commentary
 set highlightedyank
+set ideajoin
 " Plugins Set-up
 nmap <silent> s <Plug>(easymotion-s2)
 nmap <silent> S <Plug>(easymotion-overwin-f2)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
-map  p <Plug>(easymotion-prev)
+map  N <Plug>(easymotion-prev)
 nnoremap <Leader>e :NERDTreeToggle<CR>
