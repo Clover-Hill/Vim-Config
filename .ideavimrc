@@ -1,0 +1,62 @@
+" Initial Global Setting
+set nowrap                              " Display long lines as just one line
+set whichwrap+=<,>,[,],h,l
+set encoding=utf-8                      " The encoding displayed
+set ruler              			        " Show the cursor position all the time
+set tabstop=4                           " Insert 2 spaces for a tab
+set shiftwidth=4                        " Change the number of space characters inserted for indentation
+set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
+set expandtab                           " Converts tabs to spaces
+set smartindent                         " Makes indenting smart
+set autoindent                          " Good auto indent
+set laststatus=2                        " Always display the status line
+set number                              " Line numbers
+set cursorline                          " Enable highlighting of the current line
+set showtabline=2                       " Always show tabs
+set updatetime=300                      " Faster completion
+set timeoutlen=1000                      " By default timeoutlen is 1000 ms
+set incsearch
+set relativenumber
+" Initial Key Mapping
+imap <C-h> <C-w>h
+imap <C-j> <C-w>j
+imap <C-k> <C-w>k
+imap <C-l> <C-w>l
+" g Leader key
+let mapleader=" "
+nnoremap <Space> <Nop>
+" Better indenting
+vnoremap < <gv
+vnoremap > >gv
+" remap $ & ^
+nnoremap gh ^
+nnoremap gl $
+vnoremap gh ^
+vnoremap gl g_
+" Remap for copy and paste from system clipboard
+" CTRL-X and SHIFT-Del are Cut
+vnoremap <C-X> "+x
+vnoremap <S-Del> "+x
+" CTRL-C is Copy
+vnoremap <C-C> "+y
+nnoremap <A-O> :%y+
+" CTRL-V is Paste
+map <C-V>       "+gp
+" Remap jump list since remapping <Tab> cause the remap of <c-i> as well
+nnoremap <C-n> <C-i>
+" I hate escape more than anything else
+inoremap jj <Esc>
+" IdeaVim-Emulated Plugins
+set easymotion
+set NERDTree
+set surround
+set commentary
+set highlightedyank
+" Plugins Set-up
+nmap <silent> s <Plug>(easymotion-s2)
+nmap <silent> S <Plug>(easymotion-overwin-f2)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  p <Plug>(easymotion-prev)
+nnoremap <Leader>e :NERDTreeToggle<CR>
